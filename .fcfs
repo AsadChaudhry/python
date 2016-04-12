@@ -1,0 +1,18 @@
+arr = []
+wtime = 0
+tot= int(raw_input('Enter the total no of processes: '))
+for i in xrange(tot):
+    arr.append([])
+    arr[i].append(raw_input('Enter process name: '))
+    arr[i].append(int(raw_input('Enter arrival time: ')))
+    wtime += arr[i][1]
+    arr[i].append(int(raw_input('Enter burst time: ')))
+
+arr.sort(key = lambda arr:arr[1])
+
+print 'ProcessName\tArrivalTime\tBurstTime'
+for i in xrange(tot):
+    print arr[i][0],'\t\t',arr[i][1],'\t\t',arr[i][2]
+    
+print 'Total waiting time: ',wtime
+print 'Average waiting time: ',(wtime/tot)
